@@ -24,8 +24,8 @@ if text_data and button:
     token_rep = tokenizer([text_data],padding=True,truncation=True,max_length=512,return_tensors='pt')
     output = model(**token_rep)
 
-    legits = output.legits
-    prediction = np.argmax(output.legits.detach.numpy(),axis=-1)
+    logits = output.logits
+    prediction = np.argmax(output.logits.detach.numpy(),axis=-1)
 
     st.write('Legits',legits)
     st.write('predictions',dictionary[prediction])
