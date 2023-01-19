@@ -27,7 +27,7 @@ if text_data and button:
     logits = output.logits
     prediction = np.argmax(output.logits.detach.numpy(),axis=-1)
 
-    st.write('Legits',legits)
+    st.write('Logits',logits)
     st.write('predictions',dictionary[prediction])
     
 
