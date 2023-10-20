@@ -25,7 +25,7 @@ if text_data and button:
     output = model(**token_rep)
 
     logits = output.logits
-    prediction = np.argmax(output.logits.detach().numpy(),axis=-1)
+    prediction = np.argmax(output.logits.detach().numpy(),axis=1)
 
     st.write('Logits',logits)
     st.write('predictions',dictionary[prediction[0]])
